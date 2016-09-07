@@ -1,0 +1,18 @@
+- url = article.summarized? ? article_path(article) : article.url
+
+.summary-card.mdl-card
+    .mdl-card__supporting-text
+        - if article.image.url
+            .summary-card__image
+                .summary-card__image-container
+                    = link_to "#{image_tag article.image.url}".html_safe, url, target: '_blank'
+                    br
+                    - if article.image_attribution.present?
+                        span.summary-card__image-attribution= article.image_attribution.html_safe
+                    - else
+                        .summary-card__image-spacer
+        .summary-card__title-text
+            = link_to article.title, url, class: 'summary-card__title-text-link', target: '_blank'
+        = homepage_summary_card_subtitle(article, url)
+        .summary-card__metadata= homepage_summary_card_metadata(article)
+    .mdl-card__actions.mdl-card--border

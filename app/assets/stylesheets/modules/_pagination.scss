@@ -1,0 +1,39 @@
+.pagination-container {
+  text-align: center;
+}
+
+.pagination__first-prev,
+.pagination__next-last,
+.pagination__pages {
+  display: inline-block;
+}
+
+.pagination__page,
+.pagination__pages .current {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 660px) {
+
+  .pagination__first-prev,
+  .pagination__next-last,
+  .pagination__pages {
+    display: block;
+  }
+
+  .pagination__pages {
+    margin: 10px 0px;
+  }
+
+  .paginator__button--first,
+  .paginator__button--next {
+    float: left;
+  }
+
+  .paginator__button--prev,
+  .paginator__button--last {
+    float: right;
+  }
+
+}

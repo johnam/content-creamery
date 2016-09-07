@@ -1,0 +1,13 @@
+header.mdl-layout__header {
+  background: white;
+  box-shadow: none;
+
+  .mdl-layout__drawer-button {
+    color: $color-primary;
+  }
+
+  .mdl-navigation__link {
+    // color: $layout-text-color;
+    color: $layout-drawer-navigation-color;
+  }
+}

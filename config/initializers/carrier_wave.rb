@@ -1,0 +1,1 @@
+require 'cc_core/initializers/carrier_wave'

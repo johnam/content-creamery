@@ -1,0 +1,11 @@
+<p>Welcome <%= @email %></p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>Thank you for preregistering! This is an experiment to test if member-created summaries are produced and valued. We will notify you when the community is open. In the meantime, please share your summaries with us at <a href="mailto:summary@example.com?subject=[summary]">summary@example.com</a> and <a href="mailto:member_thoughts@example.com?subject=Thoughts">share your thoughts with us</a>.</p>
+
+<br>
+<p>Thank you,</p>
+<p>John McCarthy</p>

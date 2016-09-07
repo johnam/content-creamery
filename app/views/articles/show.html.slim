@@ -1,0 +1,18 @@
+- content_for :fb_meta do
+    meta property='og:type'           content='article'
+    meta property='og:url'            content=article_url(@article.slug)
+    meta property='og:title'          content=@article.title
+    meta property='og:description'    content=fb_description(@article)
+    meta property='article:publisher' content='https://www.facebook.com/contentcreamery/'
+    - if @article.image.url
+        meta property='og:image' content='#{@article.image.url}'
+
+- content_for :title do
+    = " - #{@article.title}"
+
+
+.mdl-grid
+    .mdl-cell.mdl-cell--6-col-desktop.mdl-cell--3-offset-desktop.mdl-cell--6-col-tablet.mdl-cell--1-offset-tablet.mdl-cell--4-col-phone.mdl-cell__hamburger-padding--article
+        = render partial: 'article', locals: {article: @article}
+
+= render partial: 'shared/newsletter_sign_up', locals: {sign_up: @sign_up}

@@ -1,0 +1,26 @@
+.summary-card.mdl-card
+    .mdl-card__supporting-text
+        .summary-card__image
+            .summary-card__image-container
+                - if article.image.url
+                    = link_to_unless_current "#{image_tag article.image.url}".html_safe, article_path(article), target: '_blank' do
+                        = image_tag article.image.url
+                    br
+                    - if article.image_attribution.present?
+                        span.summary-card__image-attribution= article.image_attribution.html_safe
+                    - else
+                        .summary-card__image-spacer
+        .summary-card__title-text
+            = link_to_unless_current(article.title, article_path(article), class: 'summary-card__title-text-link', target: '_blank') {"<span class='summary-card__title-text-link'>#{article.title}</span>".html_safe}
+        hr.summary-card__title-divider
+        = summary_card_subtitle(article)
+        .summary-card__metadata= summary_card_metadata(article)
+        .summary-card__summary= article.summary.html_safe
+    .mdl-card__actions
+        = link_to 'Full text', article.url, target: '_blank', class: 'summary-card__button mdl-button mdl-js-button mdl-js-ripple-effect'
+
+        .summary-card__button--twitter
+            a.twitter-share-button href='https://twitter.com/share' data-url=article_url(article.slug) Tweet
+
+        .fb-share-button.summary-card__button--facebook data-href=article_url(article.slug) data-layout='button'
+    .mdl-card__actions.mdl-card--border

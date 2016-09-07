@@ -1,0 +1,53 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* Material Design Lite */
+
+// Variables and mixins
+@import "variables";
+@import "mixins";
+
+// Resets and dependencies
+@import "mdl/resets";
+@import "mdl/typography";
+
+// Components
+@import "mdl/palette";
+@import "mdl/ripple";
+@import "mdl/animation";
+@import "mdl/badge";
+@import "mdl/button";
+@import "mdl/card";
+@import "mdl/checkbox";
+@import "mdl/data-table";
+@import "mdl/dialog";
+@import "mdl/mega_footer";
+@import "mdl/mini_footer";
+@import "mdl/icon-toggle";
+@import "mdl/list";
+@import "mdl/menu";
+@import "mdl/progress";
+@import "mdl/layout";
+@import "mdl/radio";
+@import "mdl/slider";
+@import "mdl/snackbar";
+@import "mdl/spinner";
+@import "mdl/switch";
+@import "mdl/tabs";
+@import "mdl/textfield";
+@import "mdl/tooltip";
+@import "mdl/shadow";
+@import "mdl/grid";

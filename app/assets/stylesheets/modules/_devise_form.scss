@@ -1,0 +1,25 @@
+.devise-form {
+  @include margin-auto-centering;
+}
+
+.devise-form-sign-in__register-link {
+  font-size: 18px;
+}
+
+#error_explanation {
+  h2 {
+    display: none;
+  }
+
+  li {
+    color: $color-accent;
+  }
+}
+
+.tos-notice {
+  float: right;
+  display: inline-block;
+  width: 160px;
+  padding-top: 3px;
+  font-size: 12px;
+}

@@ -1,0 +1,41 @@
+.sign-up {
+  margin-bottom: 3px;
+}
+
+.sign-up__cell {
+  @include margin-auto-centering;
+}
+
+.sign-up__card {
+  width: 100%;
+  text-align: center;
+}
+
+.sign-up__card-title, .sign-up__card-subtitle-text {
+  @include margin-auto-centering;
+  display: inline-block;
+  font-family: $pt_sans;
+  font-size: 28px;
+  font-weight: bold;
+  color: $text-color-primary;
+}
+
+.sign-up__card-subtitle-text {
+  font-size: 20px;
+}
+
+.sign-up__card-error {
+  color: $color-accent;
+}
+
+#sign_up_age, .sign-up-demographics__age-label {
+  width: 50%;
+}
+
+#Sign-Up__Demographics {
+  display: none;
+
+  .sign-up__card-title {
+    display: block
+  }
+}

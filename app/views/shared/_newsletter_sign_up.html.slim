@@ -1,0 +1,32 @@
+- unless user_signed_in? && (current_user.newsletter_opt_in == true)
+    #Sign-Up.sign-up.mdl-grid
+        .sign-up__cell.mdl-cell.mdl-cell--8-col
+            #Sign-Up__Email.sign-up__card.mdl-card
+                .sign-up__card-title.mdl-card__title
+                    |  Curated intelligent content<br>delivered to your inbox:
+                .sign-up__card-error
+                .mdl-card__supporting-text
+                    = form_for sign_up, url: api_sign_ups_path, html: { id: 'New-Sign-Up' } do |f|
+                        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                            = f.label :email, class: 'mdl-textfield__label'
+                            = f.email_field :email, email_field_options
+                        .mdl-card__actions
+                            button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent RECEIVE PERIODICAL
+
+            #Sign-Up__Demographics.sign-up__card.mdl-card
+                .sign-up__card-title.mdl-card__title Thank you!
+                #Sign-Up__Demographics-Content
+                    .sign-up__card-subtitle-text.mdl-card__subtitle-text Please tell us a little about you to help us send you the best content:
+                    .mdl-card__supporting-text
+                        = form_for sign_up, url: api_sign_ups_update_path, html: { id: 'Update-Sign-Up', class: nil } do |f|
+                            = f.hidden_field :id, id: 'Update-Sign-Up-ID'
+                            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                                = f.label :age, class: 'sign-up-demographics__age-label mdl-textfield__label'
+                                = f.number_field :age, class: 'mdl-textfield__input',
+                                                       autofocus: true
+                            <br>
+                            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                                = f.label :gender, class: 'mdl-textfield__label'
+                                = f.text_field :gender, class: 'mdl-textfield__input'
+                            .mdl-card__actions
+                                button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent SEND

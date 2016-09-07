@@ -1,0 +1,35 @@
+<div class='mdl-grid'>
+  <div class='mdl-cell mdl-cell--12-col'>
+
+    <div class='mdl-card devise-form'>
+      <div class='mdl-card__title'>
+        <div class='mdl-card__title-text'>
+          Change your password
+        </div>
+      </div>
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class='mdl-card__supporting-text'>
+          <%= devise_error_messages! %>
+        </div>
+
+        <div class='mdl-card__supporting-text'>
+          <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+            <%= f.label :password, class: 'mdl-textfield__label'%>
+            <%= f.password_field :password, password_field_options %>
+          </div>
+        </div>
+
+        <div class='mdl-card__actions'>
+          <%= f.button 'Change password', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect' %>
+        </div>
+      <% end %>
+
+      <%= devise_users_shared_links %>
+    </div>
+
+  </div>
+</div>

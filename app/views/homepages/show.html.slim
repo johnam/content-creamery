@@ -1,0 +1,20 @@
+- content_for :fb_meta do
+    meta property='og:url' content=root_url
+
+- content_for :head do
+    = rel_next_prev_link_tags @articles
+
+= render partial: 'shared/newsletter_sign_up', locals: {sign_up: @sign_up}
+
+- cache @articles do
+    .articles-page.clearfix
+        .articles-page__column.articles-page__column--left
+            = render partial: 'article', collection: @articles_left
+        .articles-page__column.articles-page__column--center
+            = render partial: 'article', collection: @articles_center
+        .articles-page__column.articles-page__column--right
+            = render partial: 'article', collection: @articles_right
+
+    .pagination-container.mdl-grid
+        .mdl-cell.mdl-cell--12-col
+            = paginate @articles
